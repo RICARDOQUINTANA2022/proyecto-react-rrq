@@ -1,14 +1,21 @@
-import React from 'react'
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import CardItem from '../Item/CardItem';
 
-function ItemListContainer (props) {
-    const styleUno = {
-        padding : '300px',
-        backgroundColor: 'green',
-        color : 'white',
-        textAlign : 'center'
-    }
+
+function ItemListContainer () {
+    
     return (
-        <h3 style={styleUno}>{props.text}</h3>
+        <Container>
+            <Row>
+                <Col>
+                <CardItem />
+                </Col>
+            </Row>
+        </Container>
+       
     )
 }
 
