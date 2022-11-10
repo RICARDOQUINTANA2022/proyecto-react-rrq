@@ -23,14 +23,30 @@ const apiFetch = async () => {
 
 useEffect( ()=> {
   apiFetch();
-}, [])
+}, [params])
+
+function handlenext () {
+  let newparams = {...params};
+  newparams.offset += 10
+  setparams(newparams)
+} 
+function handleprev () {
+  let newparams = {...params};
+  newparams.offset += 10
+  setparams(newparams)
+} 
 
   return (
-      <div className="row">   
+      <div className="row">
+        <div className="row">
+        <Button className="col-md-6 my-3" style={{}} variant="primary" onClick={handleprev}>{"<-"}   Previous page</Button>
+        <Button className="col-md-6 my-3" variant="primary" onClick={handlenext}>Next page   {"->"}</Button>
+        </div>
+   
       <h1 style={{textAlign: "center"}}>MUNDO CAMINO</h1>
               {mercadoList.map((item) => (
-                  <div className="col-md-3 my-3">
-                      <Card style={{ width: 'auto', height: "350px", background:"yellow", textAlign:"center",padding:"20px"}} >
+                  <div className="col-md-3 my-3" key={item.id}>
+                      <Card style={{ width: 'auto', height: "350px", background:"grey", textAlign:"center",padding:"20px",}} >
                       <Card.Body>
                       <Card.Title>{item.title}</Card.Title>
                       <img src={item.thumbnail} alt={item.title} style={{width:"auto"}}/>
@@ -42,9 +58,9 @@ useEffect( ()=> {
                   </Card.Body>
                   </Card>
                   </div>
-                  
               ))}
       </div>
+
   )
 }
 
