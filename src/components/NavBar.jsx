@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { Link } from "react-router-dom";
+import Logo from "./fordlogo2.png"
 
 
 function NavBar() {
@@ -15,14 +17,14 @@ function NavBar() {
         <Container>
         <Row>    
             <Col>
-                <h3>Mi tienda</h3>
+                <Link to="/"><img src={Logo} alt=""  style={{width: '150px'}}/></Link>
             </Col>    
             <Col>
                 <div>
-                    <Button text="Calzados"/>
-                    <Button text="Promos temporada"/>
-                    <Button text="Party"/>
-                    <Button text="Unicos"/> 
+                    <Link to="Usados"><Button text="Usados"/></Link>
+                    <Link to="okm"><Button text="0 KM"/></Link>
+                    <Link to="pick"><Button text="Pick"/></Link>
+                    <Link to="Unicos"><Button text="Unicos"/></Link>   
                 </div>
             </Col>
             <Col>

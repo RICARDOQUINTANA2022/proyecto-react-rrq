@@ -11,7 +11,7 @@ function CardItem () {
   });
 
 
-const query = "bulldog";
+const query = "ford";
   const url = `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=${params.limit}&offset=${params.offset}`;
 
 
@@ -41,12 +41,11 @@ function handleprev () {
         <div className="row">
         <Button className="col-md-6 my-3" style={{}} variant="primary" onClick={handleprev}>{"<-"}   Previous page</Button>
         <Button className="col-md-6 my-3" variant="primary" onClick={handlenext}>Next page   {"->"}</Button>
-        </div>
-   
-      <h1 style={{textAlign: "center"}}>MUNDO CAMINO</h1>
+        </div>  
+      <h1 style={{textAlign: "center", color:"blue"}}>MUNDO FORD</h1>
               {mercadoList.map((item) => (
                   <div className="col-md-3 my-3" key={item.id}>
-                      <Card style={{ width: 'auto', height: "350px", background:"grey", textAlign:"center",padding:"20px",}} >
+                      <Card style={{ width: 'auto', height: "400px", background:"rgb(117, 117, 228)", textAlign:"center",padding:"20px",}} >
                       <Card.Body>
                       <Card.Title>{item.title}</Card.Title>
                       <img src={item.thumbnail} alt={item.title} style={{width:"auto"}}/>

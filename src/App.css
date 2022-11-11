@@ -5,13 +5,13 @@
 
 .App-NavBar {
 
-  background-color: #836464;
+  background-color: rgb(91, 90, 90);
   height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  font-size: calc(3px + 2vmin);
+  font-size: 35px;
   color: white;
 }
 
