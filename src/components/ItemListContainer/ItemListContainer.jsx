@@ -1,22 +1,29 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-//import ApiList from '../Api/Api';
-import CardItem from '../Item/CardItem';
+import React, {useState, useEffect} from "react";
+import getItemFromMock  from "../../mock/mock";
+import ItemList from "./ItemList";
 
+function ItemListContainer() {
+    const [itemProduct, setItemProduct] = useState ([]);
 
-function ItemListContainer () {
-    
-    return (
-        <Container>
-            <Row>
-                <Col>
-                <CardItem />
-                </Col>
-            </Row>
-        </Container>
-       
+    useEffect(() =>{
+    getItemFromMock().then((productMock) => {
+        setItemProduct(productMock);
+    },[]);
+
+})
+    return (     
+        <div className="row">
+        <div className="col-4">
+            {itemProduct.map((item)=>(
+            < ItemList
+                key={item.id}
+                title={item.title}
+                price={item.price}
+                image={item.image}
+                />
+                ))}
+        </div>
+        </div>  
     )
 }
 

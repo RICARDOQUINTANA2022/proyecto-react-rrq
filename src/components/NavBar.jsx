@@ -16,10 +16,10 @@ function NavBar() {
     <nav className="App-NavBar">  
         <Container>
         <Row>    
-            <Col>
+            <Col className="col-md-1 my-2">
                 <Link to="/"><img src={Logo} alt=""  style={{width: '150px'}}/></Link>
             </Col>    
-            <Col>
+            <Col className="col-md-10 my-2" style={{textAlign:"center"}}>
                 <div>
                     <Link to="Usados"><Button text="Usados"/></Link>
                     <Link to="okm"><Button text="0 KM"/></Link>
@@ -27,7 +27,7 @@ function NavBar() {
                     <Link to="Unicos"><Button text="Unicos"/></Link>   
                 </div>
             </Col>
-            <Col>
+            <Col className="col-md-1 my-2">
                 <div className="cW" >
                     <CartWidget />
                 </div>  
