@@ -7,7 +7,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Link } from "react-router-dom";
-import Logo from "./fordlogo2.png"
+import Logo from "./Venum-Logo-1280x725.png"
+
 
 
 function NavBar() {
@@ -17,19 +18,19 @@ function NavBar() {
         <Container>
         <Row>    
             <Col className="col-md-1 my-2">
-                <Link to="/"><img src={Logo} alt=""  style={{width: '150px'}}/></Link>
+                <Link to="/"><img src={Logo} alt=""  style={{width: '100px'}}/></Link>
             </Col>    
             <Col className="col-md-10 my-2" style={{textAlign:"center"}}>
                 <div>
-                    <Link to="Usados"><Button text="Usados"/></Link>
-                    <Link to="okm"><Button text="0 KM"/></Link>
-                    <Link to="pick"><Button text="Pick"/></Link>
-                    <Link to="Unicos"><Button text="Unicos"/></Link>   
+                    <Link to="Usados"><Button text="men's clothing"/></Link>
+                    <Link to="okm"><Button text="jewelery"/></Link>
+                    <Link to="pick"><Button text="electronics"/></Link>
+                    <Link to="Unicos"><Button text="women's clothing"/></Link>   
                 </div>
             </Col>
             <Col className="col-md-1 my-2">
                 <div className="cW" >
-                    <CartWidget />
+                   <Link style={{color:"white"}}><CartWidget /></Link>
                 </div>  
             </Col>      
         </Row>  

@@ -1,35 +1,38 @@
 import React, {useState, useEffect} from "react";
 import { getSingleItemFromMock } from "../../mock/mock";
 import Card from 'react-bootstrap/Card';
-import { Button } from "react-bootstrap";
 import ItemCounter from "../iitemCount/itemCount";
+import {useParams} from "react-router-dom";
 
 
 function ItemDetailContainer() {
   const [Item, setItem] = useState ([]);
 
-  useEffect(() =>{
-    getSingleItemFromMock().then((productMock) => {
-      setItem(productMock);
-    },[]);
+  let params = useParams()
+  let id = params.id
 
-  })
+  useEffect(() =>{
+    getSingleItemFromMock(id)
+    .then((productMock) => {
+      setItem(productMock);
+    }).catch( error=>alert(error))
+  }, []);
+
+  
 return (
 
   <div>
-  <div  key={Item.id}>
+  <div>
                     <Card style={{ width: 'auto', height: "auto", background:"rgb(117, 117, 228)", textAlign:"center",padding:"20px",}} >
                     <Card.Body>
-                    <Card.Title>{Item.title}</Card.Title>
-                    <img src={Item.image} alt={Item.title} style={{width:"250"}}/>
-                    <Card.Text>${Item.price}</Card.Text>
-                    <Card.Text>
-                    Ingrese para conocer los detalles
-                    </Card.Text>
-                    <Button variant="primary">Ver mas</Button>
+                    <h1>{Item.title}</h1>
+                    <img src={Item.image} alt={Item.title} style={{width:"300px"}}/>
+                    <h2>${Item.price}</h2>
+                    <p>{Item.description}</p>
                     </Card.Body>
+                    <div><ItemCounter stock={Item.Stock}/></div>
                     </Card>
-                    <div className="col-3"><ItemCounter/></div>
+                  
                     
             </div>
   </div>
