@@ -22,15 +22,15 @@ function NavBar() {
             </Col>    
             <Col className="col-md-10 my-2" style={{textAlign:"center"}}>
                 <div>
-                    <Link to="Usados"><Button text="men's clothing"/></Link>
-                    <Link to="okm"><Button text="jewelery"/></Link>
-                    <Link to="pick"><Button text="electronics"/></Link>
-                    <Link to="Unicos"><Button text="women's clothing"/></Link>   
+                    <Link to="/category/men's clothing"><Button text="men's clothing"/></Link>
+                    <Link to="/category/jewelery"><Button text="jewelery"/></Link>
+                    <Link to="/category/electronics"><Button text="electronics"/></Link>
+                    <Link to="/category/women's clothing"><Button text="women's clothing"/></Link>   
                 </div>
             </Col>
             <Col className="col-md-1 my-2">
                 <div className="cW" >
-                   <Link style={{color:"white"}}><CartWidget /></Link>
+                <Link style={{color:"white"}}><CartWidget /></Link>
                 </div>  
             </Col>      
         </Row>  

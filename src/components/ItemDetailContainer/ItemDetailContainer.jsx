@@ -16,7 +16,7 @@ function ItemDetailContainer() {
     .then((productMock) => {
       setItem(productMock);
     }).catch( error=>alert(error))
-  }, []);
+  }, [id]);
 
   
 return (
@@ -27,7 +27,7 @@ return (
                     <Card.Body>
                     <h1>{Item.title}</h1>
                     <img src={Item.image} alt={Item.title} style={{width:"300px"}}/>
-                    <h2>${Item.price}</h2>
+                    <h2>U$S{Item.price}</h2>
                     <p>{Item.description}</p>
                     </Card.Body>
                     <div><ItemCounter stock={Item.Stock}/></div>

@@ -286,3 +286,12 @@ export function getSingleItemFromMock (idParams) {
     })
 };
 
+export function getItemCategoryFromMock (categoryid) {
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            let itemRequested = productmock.filter(item => item.category === categoryid)
+            resolve(itemRequested);
+        },500)
+    })
+};
+
